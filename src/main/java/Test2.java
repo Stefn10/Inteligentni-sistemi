@@ -62,18 +62,14 @@ public class Test2 {
                         DFS.dfs(graph, graph.getNode("A 0"), 500, 500);
                         break;
                     case 3:
-                        System.out.println("Running Dijkstra's Algorithm:");
-                        Dijkstra.dijkstra(graph, graph.getNode("A 0"), 500, 500);
-                        break;
-                    case 4:
                         System.out.println("Running A* Search:");
                         Astar.astar(graph, graph.getNode("A 0"), graph.getNode("A 9"), 5, 500, 500);
                         break;
-                    case 5:
+                    case 4:
                         System.out.println("Running Hill Climbing:");
                         HillClimb.hillClimbing(graph, graph.getNode("A 0"), graph.getNode("A 9"), 500, 500);
                         break;
-                    case 6:
+                    case 5:
                         System.out.println("Running BFS");
                         BFS.bfs(graph, graph.getNode("A 0"), 500, 500);
                     default:

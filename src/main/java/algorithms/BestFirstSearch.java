@@ -56,7 +56,7 @@ public class BestFirstSearch {
         double sumEdgeLengths = current.getEdgeSet().stream()
                 .mapToDouble(e -> (double) e.getAttribute("length"))
                 .sum();
-        return sumEdgeLengths / current.getDegree(); /// Sumira duzinu grana i podeli sa brojem suseda
+        return sumEdgeLengths / current.getDegree(); /// Vraca prosecnu duzinu grana od svojih suseda
     }
 }
 

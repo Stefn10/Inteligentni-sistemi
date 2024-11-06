@@ -6,7 +6,7 @@ import java.util.Queue;
 
 public class BFS { /// Pretraga po sirini
 
-    public static void bfs(Graph graph, Node startNode, int nodeVisitDelay, int edgeVisitDelay) throws InterruptedException {
+    public static void bfs(Graph graph, Node startNode,Node targetNode, int nodeVisitDelay, int edgeVisitDelay) throws InterruptedException {
         Queue<Node> queue = new LinkedList<>();
         queue.add(startNode);
 
@@ -18,6 +18,11 @@ public class BFS { /// Pretraga po sirini
             //Kada je cvor posecen, promeni boju
             markNodeVisited(current, "darkblue");
             Thread.sleep(nodeVisitDelay);
+
+            if (current.equals(targetNode)) {
+                markNodeVisited(current, "orange");
+                break;
+            }
 
             //Prolazi kroz sve susede
             for (Edge edge : current.getEdgeSet()) {

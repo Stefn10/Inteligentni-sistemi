@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class DFS { /// Pretraga po dubini
 
-    public static void dfs(Graph graph, Node startNode, int nodeVisitDelay, int edgeVisitDelay) throws InterruptedException {
+    public static void dfs(Graph graph, Node startNode, Node targetNode, int nodeVisitDelay, int edgeVisitDelay) throws InterruptedException {
         Stack<Node> stack = new Stack<>();
         stack.add(startNode);
         startNode.setAttribute("visited", true);
@@ -13,6 +13,11 @@ public class DFS { /// Pretraga po dubini
         while (!stack.isEmpty()) {
             Node current = stack.pop();
             markNodeVisited(current, "blue", nodeVisitDelay);
+
+            if (current.equals(targetNode)) {
+                markNodeVisited(current, "orange", nodeVisitDelay);
+                break;
+            }
 
             for (Edge edge : current.getEdgeSet()) {
                 Node neighbor = edge.getOpposite(current);

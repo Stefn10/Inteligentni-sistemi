@@ -22,7 +22,7 @@ public class HillClimb {
                 Edge edge = currentNode.getEdgeBetween(neighbor);
 
                 neighbor.setAttribute("ui.style", "fill-color: green;");
-                Thread.sleep(500);  // Задержка, чтобы визуализировать процесс
+                Thread.sleep(500);
 
                 if (edge != null) {
                     double weight = edge.getAttribute("length");
@@ -33,7 +33,7 @@ public class HillClimb {
                     }
 
                     edge.setAttribute("ui.style", "fill-color: blue;");
-                    Thread.sleep(500);  // Задержка для визуализации
+                    Thread.sleep(500);
                 }
             }
 
@@ -47,7 +47,6 @@ public class HillClimb {
         currentNode.setAttribute("ui.style", "fill-color: orange;");
     }
 
-    // Метод для получения веса ребра между двумя узлами
     private static double getEdgeWeight(Node from, Node to) {
         Edge edge = from.getEdgeBetween(to);
         return edge.getAttribute("length");
